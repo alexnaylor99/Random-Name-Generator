@@ -37,7 +37,7 @@ def get_num_names(max_names: int) -> int:
             else:
                 return int(num_names)
         else:
-            print("Invalid number of names")
+            print("Input must be a positive whole number")
 
 
 def main() -> None:
