@@ -1,6 +1,18 @@
 # Over-engineered Random Name Generator
 > A name generator for the 21st century
 
+## Motivation
+
+Names are important because they serve as unique identifiers for individuals, groups, or things. They can convey information about a person's identity, culture, background, or purpose. Randomly selecting names is important because it eliminates biases or preferences that can be introduced when choosing names based on personal preferences or preconceived notions. Random selection can also ensure fairness, equal opportunity, and transparency in various contexts such as research, contests, or lotteries.
+
+
+## Features
+
+- Generates random names from a list of names
+- Removes duplicate names
+- Selects a number of names specified by the user
+- Grammatically respects the number of names selected
+
 ## Usage
 
 Ensure you have Python 3.10 or later installed.
