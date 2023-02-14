@@ -41,7 +41,6 @@ def main() -> None:
     # Ask user for how many names they want
     num_names: int = get_num_names(len(names))
 
-    # Print the names (sample from tuple as sampling on a set is not supported in 3.9+)
     # Change grammar based on if more than one name selected
     if num_names > 1:
         noun = "names"
@@ -50,4 +49,5 @@ def main() -> None:
         noun = "name"
         verb = "is"  # No colon needed for a single name
 
+    # Print the names (sample from tuple as sampling on a set is not supported in 3.9+)
     print(f"The random {noun} {verb} {', '.join(sample(tuple(names), num_names))}")
