@@ -9,6 +9,7 @@ Names are important because they serve as unique identifiers for individuals, gr
 ## Features
 
 - Generates random names from a list of names
+- Accept names per line or as a comma-separated list
 - Removes duplicate names
 - Selects a number of names specified by the user
 - Grammatically respects the number of names selected

@@ -9,10 +9,18 @@ def get_names() -> set[str]:
 
     names = set()
     while True:
-        name = input("Enter a name (blank to quit): ")
+        name = input("Enter one name per line or comma-separated (blank to quit): ")
         if not name:
             break
-        names.add(name)
+        # Check if input is comma separated
+        if "," in name:
+            # Split on each comma and add each name
+            for name in name.split(","):
+                # Ignore any empty names caused by trailing commas
+                if name:
+                    names.add(name.strip())
+        else:
+            names.add(name)
     return names
 
 
