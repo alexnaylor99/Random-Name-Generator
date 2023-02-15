@@ -9,7 +9,9 @@ def get_names() -> set[str]:
 
     names = set()
     while True:
-        name = input("Enter one name per line or comma-separated (blank to quit): ")
+        name = input(
+            "Enter one name per line or comma-separated (blank to quit): "
+        ).strip()
         if not name:
             break
         # Check if input is comma separated
@@ -26,7 +28,7 @@ def get_num_names(max_names: int) -> int:
     """Get number from user input. Must be less than max_names and at least 1."""
 
     while True:
-        num_names = input("Enter number of names to pick: ")
+        num_names = input("Enter number of names to pick: ").strip()
         if num_names.isdigit():
             if int(num_names) > max_names:
                 print(f"Number of names must be less than {max_names}")
@@ -43,6 +45,11 @@ def main() -> None:
 
     # Get list of names from user input
     names: set[str] = get_names()
+
+    # Check if any names were entered
+    if not names:
+        print("No names entered")
+        return
 
     # Ask user for how many names they want
     num_names: int = get_num_names(len(names))
