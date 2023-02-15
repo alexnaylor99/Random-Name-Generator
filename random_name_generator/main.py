@@ -27,6 +27,10 @@ def get_names() -> set[str]:
 def get_num_names(max_names: int) -> int:
     """Get number from user input. Must be less than max_names and at least 1."""
 
+    # Check if max_names is valid
+    if max_names < 1:
+        raise ValueError("max_names must be at least 1")
+
     while True:
         num_names = input("Enter number of names to pick: ").strip()
         if num_names.isdigit():
