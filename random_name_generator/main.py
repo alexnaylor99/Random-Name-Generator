@@ -14,11 +14,9 @@ def get_names() -> set[str]:
             break
         # Check if input is comma separated
         if "," in name:
-            # Split on each comma and add each name
-            for name in name.split(","):
-                # Ignore any empty names caused by trailing commas
-                if name:
-                    names.add(name.strip())
+            # Split on each comma and add each name, ignoring any empty names
+            for csv in (csv.strip() for csv in name.split(",") if csv.strip()):
+                names.add(csv)
         else:
             names.add(name)
     return names
