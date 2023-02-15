@@ -1,4 +1,4 @@
-Random Name Generator
+#Random Name Generator
 
 ## Introduction 
 A simple random name generator application which you can generate within a few types and clicks.
