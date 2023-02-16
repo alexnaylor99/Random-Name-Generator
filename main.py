@@ -9,7 +9,7 @@ import random
 import re
 
 # Define the URL for the random word API
-url = "https://random-word-api.herokuapp.com/word"
+url = "https://random-word-api.herokuapp.com/word?lang=it"
 
 
 # Define an empty list, this list will be filled with the provided
