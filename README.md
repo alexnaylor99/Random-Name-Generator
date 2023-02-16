@@ -1,5 +1,7 @@
 # Random Name Generator
-This is a simple Python script that generates a list of random names based on a user-provided name using the random-word API. The script prompts the user for a name and the number of examples to generate, and then displays the list of names along with a randomly selected favorite name.
+This is a simple Python script that generates a list of random names based on a user-provided name using the random-word API. 
+
+The script prompts the user for a name and the number of examples to generate, and then displays the list of names along with a randomly selected favorite name.
 
 ## Prerequisites
 To run this script, you will need Python 3 installed on your local machine. You will also need to install the requests library to make API calls. You can do this by running the following command in your terminal:
