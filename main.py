@@ -1,15 +1,15 @@
-'''
+"""
  Import the necessary libraries:
  - request for API calls
  - random to generate the favourite name
  - re to check the validity of the user input
-'''
+"""
 import requests
 import random
 import re
 
 # Define the URL for the random word API
-url = 'https://random-word-api.herokuapp.com/word'
+url = "https://random-word-api.herokuapp.com/word"
 
 
 # Define an empty list, this list will be filled with the provided
@@ -25,11 +25,10 @@ def results(url, num, name):
     for i in range(num):
         # API call and cleaning of the result
         api_call = requests.get(url)
-        nickname = api_call.text.replace(
-            '[', '').replace(']', '').replace('"', '')
+        nickname = api_call.text.replace("[", "").replace("]", "").replace('"', "")
         # Show the final results and add it to the
         # generated_names list
-        madeup_name = (f"\n{name.title()} {nickname.title()}")
+        madeup_name = f"\n{name.title()} {nickname.title()}"
         print(madeup_name)
         generated_names.append(madeup_name)
 
@@ -55,11 +54,14 @@ while True:
         results(url, num, name)
         break
     else:
-        print("""Well, I asked you how many username examples
+        print(
+            """Well, I asked you how many username examples
          you want, just give a number and make sure is lower
-         than 50. Why? Just because.""")
+         than 50. Why? Just because."""
+        )
 
 # This show a random name between the the names generated
 if len(generated_names) > 1:
     print(
-        f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}.\n\n")
+        f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}.\n\n"
+    )
