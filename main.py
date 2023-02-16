@@ -31,7 +31,7 @@ def results(url, num, name):
 # This asks the user for a name as starting point
 # and check is an acceptabe input
 while True:
-    name = str(input("Please provide a first name:"))
+    name = str(input("Please provide a first name of your choice:\n"))
     if len(name) >= 2 and isinstance(name, str):
         break
     else:
