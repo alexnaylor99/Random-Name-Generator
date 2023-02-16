@@ -64,6 +64,12 @@ To run pylint, run:
 poetry run pylint random_name_generator
 ```
 
+To run the tests, run:
+
+```bash
+poetry run pytest
+```
+
 ## Versioning
 
 This project uses [SemVer](http://semver.org/) for versioning.
