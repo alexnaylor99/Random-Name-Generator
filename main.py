@@ -1,6 +1,7 @@
 # Import the requests library
 import requests
 import random
+import re
 
 # Define the URL for the random word API
 url = 'https://random-word-api.herokuapp.com/word'
@@ -32,7 +33,7 @@ def results(url, num, name):
 # and check is an acceptabe input
 while True:
     name = str(input("Please provide a first name of your choice:\n"))
-    if len(name) >= 2 and isinstance(name, str):
+    if len(name) >= 2 and re.match("^[a-zA-Z]+$", name):
         break
     else:
         print("don't be a fool a give me a real name!")
