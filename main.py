@@ -8,7 +8,7 @@ while True:
         names = str(names).split ()
 
         if len(names) == 0:
-            raise ValueError ("Please enter a name")
+            raise ValueError ()
         
     except: pass
     else: break
