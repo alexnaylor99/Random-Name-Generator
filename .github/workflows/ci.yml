@@ -29,3 +29,5 @@ jobs:
         run: |
           poetry run black . --check
           poetry run mypy . --strict
+      - name: Test
+        run: poetry run pytest
