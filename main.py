@@ -1,4 +1,9 @@
-# Import the requests library
+'''
+ Import the necessary libraries:
+ - request for API calls
+ - random to generate the favourite name
+ - re to check the validity of the user input
+'''
 import requests
 import random
 import re
@@ -39,18 +44,22 @@ while True:
         print("don't be a fool a give me a real name!")
 
 # This asks the user how many examples want to see,
-# making sure the input is an integer
+# making sure the input is an integer lower than 50
 while True:
-    num = int(input("How many name example you want me to create for you?\n"))
-    if num is not int:
-        # Here it calls the function that generate and display the names
+    num = input("How many name example you want me to create for you?\n")
+    if re.match("^[0-9]+$", num) and int(num) < 50:
+        # Here it checks that the user input is a number lower than 50
+        # and calls the function that generate and display the names
+
+        num = int(num)
         results(url, num, name)
         break
     else:
         print("""Well, I asked you how many username examples
-         you want, just give a number please!""")
+         you want, just give a number and make sure is lower
+         than 50. Why? Just because.""")
 
 # This show a random name between the the names generated
 if len(generated_names) > 1:
     print(
-        f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}\n\n")
+        f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}.\n\n")
