@@ -4,7 +4,7 @@ This is a simple Python script that generates a list of random names based on a 
 The script prompts the user for a name and the number of examples to generate, and then displays the list of names along with a randomly selected favorite name.
 
 ## Prerequisites
-To run this script, you will need Python 3 installed on your local machine. You will also need to install the [requests]([https://www.google.com](https://requests.readthedocs.io/en/latest/#)) library to make API calls. You can do this by running the following command in your terminal:
+To run this script, you will need Python 3 installed on your local machine. You will also need to install the [requests](https://www.requests.readthedocs.io/en/latest/#) library to make API calls. You can do this by running the following command in your terminal:
 
 ```
 pip install requests
