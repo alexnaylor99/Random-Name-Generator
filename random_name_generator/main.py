@@ -1,27 +1,58 @@
 """
 Pick random names from a list of names. User enters a names and number to pick.
 """
+from argparse import ArgumentParser
+from collections.abc import Generator
 from random import sample
 
 
-def get_names() -> set[str]:
-    """Return set of names from user input"""
+def parse_names(line: str) -> Generator[str, None, None]:
+    """Yield names from a line of text."""
 
-    names = set()
+    # Check if line is empty
+    if not line:
+        raise ValueError("line cannot be empty")
+
+    # Check if line is comma separated
+    if "," in line:
+        # Split on each comma and add each name, ignoring any empty names
+        for csv in (csv.strip() for csv in line.split(",") if csv.strip()):
+            yield csv
+    else:
+        yield line.strip()
+
+
+def get_names() -> set[str]:
+    """Return set of names from user input."""
+
+    # Set of names to return
+    names: set[str] = set()
+
+    # Loop until user enters a blank line
     while True:
-        name = input(
+        line = input(
             "Enter one name per line or comma-separated (blank to quit): "
         ).strip()
-        if not name:
+        if not line:
             break
-        # Check if input is comma separated
-        if "," in name:
-            # Split on each comma and add each name, ignoring any empty names
-            for csv in (csv.strip() for csv in name.split(",") if csv.strip()):
-                names.add(csv)
-        else:
-            names.add(name)
+        # Add name(s) to set
+        names.update(parse_names(line))
+
     return names
+
+
+def num_names_is_valid(num_names: int, max_names: int) -> bool:
+    """Check if num_names is valid."""
+
+    if num_names > max_names:
+        print(f"Number of names must be less than {max_names+1}")
+        return False
+
+    if num_names < 1:
+        print("Number of names must be at least 1")
+        return False
+
+    return True
 
 
 def get_num_names(max_names: int) -> int:
@@ -34,11 +65,7 @@ def get_num_names(max_names: int) -> int:
     while True:
         num_names = input("Enter number of names to pick: ").strip()
         if num_names.isdigit():
-            if int(num_names) > max_names:
-                print(f"Number of names must be less than {max_names}")
-            elif int(num_names) < 1:
-                print("Number of names must be at least 1")
-            else:
+            if num_names_is_valid(int(num_names), max_names):
                 return int(num_names)
         else:
             print("Input must be a positive whole number")
@@ -47,16 +74,38 @@ def get_num_names(max_names: int) -> int:
 def main() -> None:
     """Main function"""
 
-    # Get list of names from user input
-    names: set[str] = get_names()
+    parser = ArgumentParser(
+        description="Generate a list of random names from a pre-defined shortlist."
+    )
+    parser.add_argument(
+        "--num-names", type=int, help="Number of random names to generate."
+    )
+    parser.add_argument(
+        "--names", type=str, help="File containing the list of names, one per line."
+    )
+    args = parser.parse_args()
 
-    # Check if any names were entered
-    if not names:
-        print("No names entered")
-        return
+    # If no name file is specified, ask user for names
+    if not args.names:
+        names: set[str] = get_names()
+    else:
+        # Load shortlist from file
+        with open(args.names, "r", encoding="utf-8") as file:
+            names = {name for line in file for name in parse_names(line)}
+        # Check if any names were entered
+        if not names:
+            print("No names entered")
+            return
 
-    # Ask user for how many names they want
-    num_names: int = get_num_names(len(names))
+    # If no number of names is specified, ask user for number
+    if not args.num_names:
+        # Ask user for how many names they want
+        num_names: int = get_num_names(len(names))
+    else:
+        num_names = args.num_names
+        if not num_names_is_valid(num_names, len(names)):
+            print("Invalid number of names passed to script; enter valid number.")
+            num_names = get_num_names(len(names))
 
     # Change grammar based on if more than one name selected
     if num_names > 1:
