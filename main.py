@@ -50,5 +50,6 @@ while True:
          you want, just give a number please!""")
 
 # This show a random name between the the names generated
-print(
-    f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}\n\n")
+if len(generated_names) > 1:
+    print(
+        f"\n\n\n\nIf you ask me, my favourite is {random.choice(generated_names)}\n\n")
