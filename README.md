@@ -32,6 +32,12 @@ poetry run python -m random_name_generator
 
 Enter a series of names, one per line, then enter a blank line when done. Enter an interger to specify the number of names to generate. The program will then generate that many names and print them to the console.
 
+Alternatively, you can use the `--names` option to specify a comma-separated list of names and the `--num-names` option to specify the number of names to generate:
+
+```bash
+python -m random_name_generator --names PATH_TO_NAMES_FILE --num-names NUM_NAMES
+```
+
 ## Contributing
 
 Ensure you have Poetry installed. To install the dependencies, run:
