@@ -1,33 +1,40 @@
 import random
 
-print ("Hello!")
+print("Hello!")
 
 while True:
     try:
-        names = input ('Please enter the names separated by a space:')
-        names = str(names).split ()
+        names = input("Please enter the names separated by a space:").split()
 
         if len(names) == 0:
-            raise ValueError ()
-        
-    except: pass
-    else: break
+            print("Please enter a name")
+            raise ValueError()
+
+    except:
+        pass
+    else:
+        break
+
 
 def RNG():
-    global names 
+    global names
     nameslist = list(set(names))
     while True:
         try:
-            random_number = input ('Please enter how many names you would like: ')
-        
-            name = random.sample (nameslist, k = int(random_number))
+            random_number = input("Please enter how many names you would like: ")
 
-            if int(random_number) == 0: 
-               raise ValueError ()
+            name = random.sample(nameslist, k=int(random_number))
 
-            print ("The name(s) are:",name)
+            if int(random_number) == 0:
+                print("Please enter a how many names you would like")
+                raise ValueError()
 
-        except: pass
-        else: break
+            print("The name(s) are:", name)
+
+        except:
+            pass
+        else:
+            break
+
 
 RNG()
