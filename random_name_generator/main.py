@@ -16,8 +16,7 @@ def parse_names(line: str) -> Generator[str, None, None]:
     # Check if line is comma separated
     if "," in line:
         # Split on each comma and add each name, ignoring any empty names
-        for csv in (csv.strip() for csv in line.split(",") if csv.strip()):
-            yield csv
+        yield from (csv.strip() for csv in line.split(",") if csv.strip())
     else:
         yield line.strip()
 
@@ -90,7 +89,7 @@ def main() -> None:
         names: set[str] = get_names()
     else:
         # Load shortlist from file
-        with open(args.names, "r", encoding="utf-8") as file:
+        with open(args.names, encoding="utf-8") as file:
             names = {name for line in file for name in parse_names(line)}
         # Check if any names were entered
         if not names:
