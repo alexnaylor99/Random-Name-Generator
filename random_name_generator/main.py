@@ -9,11 +9,9 @@ from random import sample
 def parse_names(line: str) -> Generator[str, None, None]:
     """Yield names from a line of text."""
 
-    # Check if line is empty
     if not line:
         raise ValueError("line cannot be empty")
 
-    # Check if line is comma separated
     if "," in line:
         # Split on each comma and add each name, ignoring any empty names
         yield from (csv.strip() for csv in line.split(",") if csv.strip())
@@ -24,7 +22,6 @@ def parse_names(line: str) -> Generator[str, None, None]:
 def get_names() -> set[str]:
     """Return set of names from user input."""
 
-    # Set of names to return
     names: set[str] = set()
 
     # Loop until user enters a blank line
@@ -34,7 +31,6 @@ def get_names() -> set[str]:
         ).strip()
         if not line:
             break
-        # Add name(s) to set
         names.update(parse_names(line))
 
     return names
@@ -57,7 +53,6 @@ def num_names_is_valid(num_names: int, max_names: int) -> bool:
 def get_num_names(max_names: int) -> int:
     """Get number from user input. Must be less than max_names and at least 1."""
 
-    # Check if max_names is valid
     if max_names < 1:
         raise ValueError("max_names must be at least 1")
 
@@ -91,14 +86,12 @@ def main() -> None:
         # Load shortlist from file
         with open(args.names, encoding="utf-8") as file:
             names = {name for line in file for name in parse_names(line)}
-        # Check if any names were entered
         if not names:
             print("No names entered")
             return
 
     # If no number of names is specified, ask user for number
     if not args.num_names:
-        # Ask user for how many names they want
         num_names: int = get_num_names(len(names))
     else:
         num_names = args.num_names
