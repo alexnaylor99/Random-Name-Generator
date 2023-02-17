@@ -7,7 +7,6 @@ while True:
         names = input("Please enter the names separated by a space:").split()
 
         if len(names) == 0:
-            print("Please enter a name")
             raise ValueError()
 
     except:
@@ -26,7 +25,6 @@ def RNG():
             name = random.sample(nameslist, k=int(random_number))
 
             if int(random_number) == 0:
-                print("Please enter a how many names you would like")
                 raise ValueError()
 
             print("The name(s) are:", name)
