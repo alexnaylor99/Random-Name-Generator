@@ -16,9 +16,11 @@ python3 random_name_generator.py
 ```
 
 Follow the prompts to provide a name and the number of examples to generate.
+The script will also pick one of the results as their favourite.
 
 ## Sample Output
 Here is an example of the output that the script generates:
+
 
 ```
 Please provide a first name:john
