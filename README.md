@@ -33,4 +33,4 @@ John Skirt
 
 If you ask me, my favourite is John Chirpy
 ```
-Currently the script generate all surnames in Italian, this can be changed modifying the last two letters of the `url` to `en` for English
+Currently the script generate all surnames in Italian, this can be changed modifying the last two letters of the `url variable` to `en` for English
