@@ -4,7 +4,6 @@ import re
 def get_user_inputs():
     """Ask user for inputs."""
     name_list = ''
-    num_of_names = 0
     while True:
         # Ask the user to input a list of names separated by commas
         name_list = input("Enter names separated by a comma: ")
@@ -22,10 +21,8 @@ def get_user_inputs():
         name_list = remove_duplicates(name_list.split(','))
         # Check for and remove any empty strings in the input list
         name_list = check_for_empty_string(name_list)
-        # Get a valid number of names to randomly select from the list
-        num_of_names = get_valid_num_of_names(name_list)
         break
-    return name_list, num_of_names
+    return name_list
 
 def get_valid_num_of_names(name_list):
     """Get a user input for the number that is an integer and lower than the number of names in the list submitted."""
@@ -76,12 +73,19 @@ def check_for_empty_string(name_list):
 
 def select_random_names():
     """Generate then print randomly selected names from the list of names submitted by the user"""
-    # Get the input list of names and the number of names to select
-    name_list, num_of_names = get_user_inputs()
+    # Get the input list of names
+    name_list = get_user_inputs()
+    if len(name_list) == 1:
+        print(f"You only entered 1 name: {name_list[0]}")
+    # Get the number of names to select
+    num_of_names = get_valid_num_of_names(name_list)
+    # Why is the list being turned back into a set?
     selected_names = set()
+    # While the length of selected names is less than the number of names, add a randomly chosen name from the list
     while len(selected_names) < num_of_names:
         selected_names.add(random.choice(name_list))
     print("Randomly selected names:")
+    # For each index and name in the selected names set, print the index (starting at 1) and name
     for i, name in enumerate(selected_names, 1):
         print(f"{i}: {name}")
 
