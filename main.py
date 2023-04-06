@@ -89,5 +89,4 @@ def select_random_names():
     for i, name in enumerate(selected_names, 1):
         print(f"{i}: {name}")
 
-
 select_random_names()
