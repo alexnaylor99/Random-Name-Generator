@@ -34,8 +34,8 @@ def get_valid_num_of_names(name_list):
             return int(num_of_names)
 
 def check_punctuation(name_list):
-    """Check if name list contains only letters and commas."""
-    if re.search(r"[^a-zA-Z,\s]", name_list):
+    """Check if name list contains only letters, hyphens, and commas."""
+    if re.search(r"[^a-zA-Z,-\s]", name_list):
         return False
     return True
 
@@ -57,7 +57,6 @@ def check_for_empty_string(name_list):
     """Check for empty strings in a list and remove them."""
     name_list = [name for name in name_list if name != '']
     return name_list
-
 
 def generate_random_names():
     """Generates then prints randomly selected names from the list of names submitted by the user"""
