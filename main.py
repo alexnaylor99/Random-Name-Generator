@@ -24,6 +24,8 @@ def get_valid_num_of_names(name_list):
             print("Error: Number must be an integer.")
         elif int(num_of_names) > len(name_list):
             print(f"Error: Number must be {len(name_list)} or lower.")
+        elif int(num_of_names) <= 0:
+            print(f"Error: Number must be greater than 0")
         else:
             return int(num_of_names)
 
