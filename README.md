@@ -1,38 +1,33 @@
-# Beginners Python Project - Random Name Generator
-Building a Random Name Generator application.
-## Introduction 
-In this project, you will be building a text-based user interface that will take a input and output a list of random names from a pre-defined list. 
+# Random Name Selector
 
-## Learning Objects
-- User inputs
-- Validating inputs
-- Importing packages
-- Documenting code 
-- Writing functions
-- Control flows
-- Printing outputs to the user
-- Using random functionality in Python
-- Basic structure of Python Scripts
+This Python script helps you randomly select a specified number of names from a shortlist provided by the user. It takes a user input of shortlist names separated by commas and a second user input for the number of names to be randomly selected from the shortlist. It then prints the randomly selected names.
 
-## Project Brief
-This application with simulate randomly generating names from a pre-defined list. A use case could be: a set of new parents can't choose a name from a shortlist. Why not use Python to help! 
+## Features
 
-The application will: 
-- Take a user input of shortlist names.
-- Take a second user input of how many names they want randomly selected from that shortlist. This should be a positive integer. The app should check if the input is valid.
-- Print to the user the randomly selected names. 
+- Accepts a user-defined shortlist of names
+- Validates the user input for the number of names to be selected
+- Randomly selects and prints the specified number of names from the shortlist
 
-## Suggestions
-Feel free to structure the application however you see fit, but here is a project structure recommendation. If you have experience with pseudocode or flowcharts, I would recommend mapping out the project using these tools before you start any programming. 
+## Getting Started
 
-I would also recommend using Visual Studio Code as your editor, but this is personal preference. Make sure you implement coding standards and Pythonic style in the application!
+### Prerequisites
 
-Suggested Structure:
-- Contain all code in one main.py file. Could also be a .ipynb file. 
-- A README file consisting of project documentation. I would recommend a .md file.
-- Read the user's input using Python's inbuilt input() function i.e. multiple calls to input().
-- A user-defined function that validates and parses the user's input. Think of a appropriate function name and appropriate checks.
-- A user-defined function that uses Python's random package to select the names from the shortlist. Think of a appropriate function name.
-- Prints the shortlisted names to the user.
+- Python 3 and above installed on your system
 
-## Good Luck!
+### Running the Script
+Run the python script name-generator.py
+
+## Usage
+
+1. When prompted, enter the shortlist names separated by commas:
+
+Enter shortlist names separated by a comma: Beckham, Ronaldo, Messi, Silva, Aguero, Reus, DeBruyne
+
+2. When prompted, enter the number of names you want randomly selected from the shortlist:
+
+Enter the number of names you want randomly selected from the shortlist: 3
+
+3. The script will then print the randomly selected names:
+
+Randomly selected names: Ronaldo, Aguero, DeBruyne
+
