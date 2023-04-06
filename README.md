@@ -1,6 +1,16 @@
 # Random Name Selector
 
-This is a Python script that randomly selects a specified number of names from a list of names provided by the user. It checks for various errors such as empty input, invalid characters, and non-integer input for the number of names to be selected.
+This is a Python script that randomly selects a specified number of names from a list of names provided by the user.
+
+Although a simple script the validations for user input in this script include:
+
+* Checking that the input list of names is not empty.
+* Ensuring that the input list of names only contains letters, hyphens, and commas.
+* Removing duplicates from the input list of names.
+* Checking for and removing any empty strings in the input list of names.
+* Ensuring that the input number for selecting random names is a valid integer.
+* Checking that the input number for selecting random names is less than or equal to the number of names in the list.
+* Checking that the input number for selecting random names is greater than zero.
 
 ## Requirements
 
@@ -17,7 +27,7 @@ This is a Python script that randomly selects a specified number of names from a
 2. Run the script:
 
     ```bash
-    python random_name_selector.py
+    python main.py
     ```
 
 3. Enter a list of names separated by commas when prompted.
