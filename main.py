@@ -1,7 +1,7 @@
 import random
 import re
 
-def user_inputs():
+def get_user_inputs():
     """Ask user for inputs."""
     name_list = ''
     num_of_names = 0
@@ -58,9 +58,9 @@ def check_for_empty_string(name_list):
     name_list = [name for name in name_list if name != '']
     return name_list
 
-def generate_random_names():
+def select_random_names():
     """Generates then prints randomly selected names from the list of names submitted by the user"""
-    name_list, num_of_names = user_inputs()
+    name_list, num_of_names = get_user_inputs()
     selected_names = set()
     while len(selected_names) < num_of_names:
         selected_names.add(random.choice(name_list))
@@ -69,4 +69,4 @@ def generate_random_names():
         print(f"{i}: {name}")
 
 
-generate_random_names()
+select_random_names()
