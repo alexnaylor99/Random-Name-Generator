@@ -1,18 +1,24 @@
 import random
+import re
 
 num_input = 0
 
 names = set()
 
 def addNames():
+
+    #write fucntion to validate input 
     #and not user_input.isalpha()
     #check for duplicates
-    user_input = '?'
+    user_input = None
     while user_input != '':
-        user_input = input("Using only letters enter names to add to your shortlist: ")
-        names.add(user_input)
+        user_input = input("Using only letters enter names to add to your shortlist, duplicates will be ignored: ")
+        if user_input != '':
+            names.add(user_input)
         while user_input == '' and len(names) == 0:
             user_input = input("Please enter at least one name: ")
+            if user_input != '':
+                names.add(user_input)
         else:
             while user_input != '':
                 user_input = input("Add more names or press enter to stop: ")
@@ -23,10 +29,14 @@ def addNames():
             else:
                 if len(names) == 1:
                     addMore = input("you only have one name in your list, the output will be very predictable, would like to add more names? Y or N: ") 
-                    if addMore == 'Y' or addMore == 'y':
-                        addNames()
+                    while re.match("[^YNyn]", addMore):
+                        addMore = input("That is not a valid input please enter Y for yes and N for no, input is case insensitive: ")
                     else:
-                        return addNumber()
+                        if addMore == 'Y' or addMore == 'y':
+                            addNames()
+                        elif addMore == 'N' or addMore == 'n':
+                            return addNumber()
+                        
                 else:
                     return addNumber()
 
@@ -71,14 +81,6 @@ def addNumber():
             #print(nameList[j-1])
            
         return output
-    
-    #newN = int(num_input)
-
-    #if newN <= 0:
-        
-       # return 'Number should be positive'
-    #else:
-       # return newN
 
 print(addNames())
 
