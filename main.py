@@ -1,25 +1,23 @@
 import random
 
-
-
 num_input = 0
 
 names = set()
 
 def addNames():
-    #or user_input.isnotalpha()
+    #and not user_input.isalpha()
     #check for duplicates
     user_input = '?'
-    while user_input != '' and not user_input.isalpha():
+    while user_input != '':
         user_input = input("Using only letters enter names to add to your shortlist: ")
         names.add(user_input)
         while user_input == '' and len(names) == 0:
             user_input = input("Please enter at least one name: ")
         else:
-            while user_input != '' and not user_input.isalpha():
+            while user_input != '':
                 user_input = input("Add more names or press enter to stop: ")
                 
-                if user_input != '' and not user_input.isalpha():
+                if user_input != '':
                     names.add(user_input)
 
             else:
@@ -28,13 +26,11 @@ def addNames():
                     if addMore == 'Y' or addMore == 'y':
                         addNames()
                     else:
-                        addNumber()
+                        return addNumber()
                 else:
-                    addNumber()
+                    return addNumber()
 
-    return names;
-
-
+    return addNumber();
 
 def addNumber():
 
@@ -53,16 +49,28 @@ def addNumber():
         indices = []
 
         for i in range(newN):
+
+            #rNum = None
+            def newNum():
+                rNum = random.randint(1, len(names))
+
+                while rNum in indices:
+                    rNum = random.randint(1, len(names))
+                else:
+                    return rNum
+                
+            indices.append(newNum())
             
-            rNum = random.randint(1, len(names))
-            indices.append(rNum)
-            print(indices)
+            #print(indices)
+
+        output = []
 
         for j in indices:
-            print(j)
+            nameList = list(names)
+            output.append(nameList[j-1])
+            #print(nameList[j-1])
            
-
-        return newN
+        return output
     
     #newN = int(num_input)
 
@@ -75,4 +83,6 @@ def addNumber():
 print(addNames())
 
 #print(type(num_input))
+
+#addNames()
 
