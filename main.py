@@ -1,3 +1,5 @@
+import random
+
 def input_name():
     """
     Function that takes names input
@@ -19,16 +21,25 @@ def input_number():
     ----
     number : int
     """
+
     print('Enter a number to randomly select names of your list: ')
     not_valid_number = True
     while not_valid_number:
-        number = int(input())   
-        if number > 0:
+        number = input()   
+        if number.isnumeric() and number != "0":
+            number = int(number)
             not_valid_number = False
         else:
             print('Please, enter a number greater than 0')
+
     return number
 
+def random_names():
+    name_list = user_names.split() 
+    generated_random_names = random.sample(name_list, validated_number)
+    print(generated_random_names)
+   
 
-input_name()
-input_number()
+user_names = input_name()
+validated_number = input_number()
+random_names()
