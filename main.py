@@ -6,21 +6,27 @@ def input_name():
     user_names : str
     """
     
-    user_names = input('Enter random names separared by space: \n')
+    user_names = input('Enter random names separared by space: \n')        
     print(f'Thanks for entering {user_names}')
-    print(type(user_names))
+
     return user_names
 
     
 def input_number():
     """
-    Function that takes number input
+    Function that takes and validate number input from user
     Returns
     ----
-    number : str
+    number : int
     """
-    number = input('Enter a number to randomly select names of your list: \n')
-    print(type(number))
+    print('Enter a number to randomly select names of your list: ')
+    not_valid_number = True
+    while not_valid_number:
+        number = int(input())   
+        if number > 0:
+            not_valid_number = False
+        else:
+            print('Please, enter a number greater than 0')
     return number
 
 
