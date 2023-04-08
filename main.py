@@ -4,7 +4,7 @@ import re
 class PythonBBNamer:
     """Module for the indecisive parent that can't flip a coin to name their child.
     
-    Particularly, people that already have a list of names and can't choose one, but would
+    Particularly, people that already have a list of names and can't choose one name, but would
     would like another list with slightly less of the same names, that they would probably
     be unable to choose from as well.
     """
@@ -89,8 +89,6 @@ class PythonBBNamer:
         print("So, you can't think of a name for your own child.")
         print("Don't worry, this lifeless machine is happy to help :)\n")
 
-    
-
 def main():
 
     pytonbbname = PythonBBNamer()
@@ -106,3 +104,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
