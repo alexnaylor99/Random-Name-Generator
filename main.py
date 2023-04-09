@@ -53,3 +53,5 @@ while True:
 for i in range(num_name):
     name = generate_name(first_name, last_name)
     print(name)
+
+#by Sumeya
