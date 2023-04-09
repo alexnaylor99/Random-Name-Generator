@@ -1,3 +1,6 @@
+'''The program will prompt the user to enter a name to add to the shortlist, or press Enter to continue. 
+Once the user has entered at least two names, they can choose to generate a random selection of names from the list by entering a number between 1 and the length of the list.'''
+
 import random
 import re
 
@@ -7,9 +10,7 @@ names = set()
 
 def addNames():
 
-    #write fucntion to validate input 
-    #and not user_input.isalpha()
-    #check for duplicates
+    '''This function allows the user to continuously add names to the list.'''
     user_input = None
     while user_input != '':
         user_input = input("Using only letters enter names to add to your shortlist, duplicates will be ignored: ")
@@ -43,7 +44,7 @@ def addNames():
     return addNumber();
 
 def addNumber():
-
+    '''This function allows the user to select how many random outputs they would like to generate'''
     num_input = input(f"Enter a number between 1 and {len(names)}: ")
 
     newN = int(num_input)
