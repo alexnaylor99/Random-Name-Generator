@@ -94,7 +94,7 @@ def validateEntKey(name_input):
 
         name_input = None
 
-        print('continue')
+        print('Continue')
 
         addNum()
 
