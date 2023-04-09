@@ -1,7 +1,5 @@
 # Beginners Python Project - Random Name Generator
 Building a Random Name Generator application.
-## Introduction 
-In this project, you will be building a text-based user interface that will take a input and output a list of random names from a pre-defined list. 
 
 ## Learning Objects
 - User inputs
@@ -22,17 +20,21 @@ The application will:
 - Take a second user input of how many names they want randomly selected from that shortlist. This should be a positive integer. The app should check if the input is valid.
 - Print to the user the randomly selected names. 
 
-## Suggestions
-Feel free to structure the application however you see fit, but here is a project structure recommendation. If you have experience with pseudocode or flowcharts, I would recommend mapping out the project using these tools before you start any programming. 
+## Screenshots
 
-I would also recommend using Visual Studio Code as your editor, but this is personal preference. Make sure you implement coding standards and Pythonic style in the application!
+![main.py code](./assets/Screenshot%202023-04-09%20091609.png)
 
-Suggested Structure:
-- Contain all code in one main.py file. Could also be a .ipynb file. 
-- A README file consisting of project documentation. I would recommend a .md file.
-- Read the user's input using Python's inbuilt input() function i.e. multiple calls to input().
-- A user-defined function that validates and parses the user's input. Think of a appropriate function name and appropriate checks.
-- A user-defined function that uses Python's random package to select the names from the shortlist. Think of a appropriate function name.
-- Prints the shortlisted names to the user.
+## Credits/Acknowledgements
 
-## Good Luck!
+- Content was reviewed and learnt from the Xander Talent Python Course LMS
+- I was checked online resources such as W3Schools and used tools such as ChatGPT to assist in the project
+- My Colleage Shahrukh helped me at the beginning of the project
+
+## What did I learn?
+
+I got to work with pure python again which I haven't done for quite a while. 
+I also used more Pseudocode in the early stages along with commenting the criteria at the top of the file to keep me on track.
+
+I realised as well I need a lot more practice and so will be reviewing more content and trying other small challenges and projects in the near future.
+
+The mindset for problem solving is still challenging for me and so I hope more projects like this will improve that.
