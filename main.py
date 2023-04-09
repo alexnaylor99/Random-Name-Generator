@@ -56,7 +56,6 @@ class PythonBBNamer:
 
         # Recursively check whether the entered names are valid.
         if not self.is_name_list_correct():
-            # print("\nPlease enter valid identifiers for your child.")
             self.get_names_list()
 
     def get_amount_of_names(self) -> None:
@@ -66,7 +65,6 @@ class PythonBBNamer:
 
         # Recursively check whether the enter number is valid.
         if not self.is_amount_of_names_correct():
-            # print("Please enter a valid number of names to display.")
             self.get_amount_of_names()
 
     def get_name_suggestions(self) -> list:
