@@ -50,7 +50,7 @@ Enter a name and press enter to add it to the list otherwise just press enter to
 
 Enter a name and press enter to add it to the list otherwise just press enter to stop: 
 
-continue
+Continue
 
 Enter a number between 1 and 3: 2
 
