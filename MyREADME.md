@@ -43,7 +43,9 @@ This function adds the validated user input to the list of names and calls the e
 ## Example
 
 -Enter a name to add to your shortlist or press enter to continue: Alice
+
 -Enter a name and press enter to add it to the list otherwise just press enter to stop: Bob
+
 -Enter a name and press enter to add it to the list otherwise just press enter to stop: Charlie
 -Enter a name and press enter to add it to the list otherwise just press enter to stop: 
 -continue
