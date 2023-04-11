@@ -51,7 +51,7 @@ def check_punctuation(name_list):
 def remove_duplicates(name_list):
     """Remove duplicates from the name list."""
     # Convert the input list to a set to remove duplicates, then convert back to a list
-    return list(set(name_list))
+    return list(set(name.lower() for name in name_list))
 
 def remove_whitespace_after_commas(name_list):
     """Remove whitespace after commas in the name list."""
