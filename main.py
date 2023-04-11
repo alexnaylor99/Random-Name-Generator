@@ -89,4 +89,8 @@ def select_random_names():
     for i, name in enumerate(selected_names, 1):
         print(f"{i}: {name}")
 
-select_random_names()
+def main():
+    select_random_names()
+
+if __name__ == "__main__":
+    main()
