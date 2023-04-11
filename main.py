@@ -79,7 +79,7 @@ def select_random_names():
         print(f"You only entered 1 name: {name_list[0]}")
     # Get the number of names to select
     num_of_names = get_valid_num_of_names(name_list)
-    # Why is the list being turned back into a set?
+    # Create empty set to add random names to
     selected_names = set()
     # While the length of selected names is less than the number of names, add a randomly chosen name from the list
     while len(selected_names) < num_of_names:
