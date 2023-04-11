@@ -15,8 +15,8 @@ def random_names_generator():
             user_names = input('Enter random names separared by space: \n')
             if not user_names:
                 print('You have not entered any names. Please try again')        
-            elif re.search(r'^[a-zA-Z0-9,]+$', user_names):
-                print('Names should only contain letters or digits and be separated by space')       
+            elif not re.search(r'^[a-zA-Z ]+$', user_names):
+                print('Names should only contain letters and be separated by spaces')
             else:
                 print(f'Thanks for entering {user_names}')
                 name_list = user_names.split() 
