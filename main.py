@@ -18,7 +18,7 @@ def random_names_generator():
             elif not re.search(r'^[a-zA-Z ]+$', user_names):
                 print('Names should only contain letters and be separated by spaces')
             else:
-                print(f'Thanks for entering {user_names}')
+                print(f'Thanks for entering: {user_names}')
                 name_list = user_names.split() 
                 not_valid_names = False
 
@@ -53,10 +53,14 @@ def random_names_generator():
         """
         Function that generates random number of names specified by the user 
         """
+        
         name_list = input_name()
         number_of_names = input_number(name_list)
-        generated_random_names = random.sample(name_list, number_of_names)
-        print(f'Random names generated are: {generated_random_names}')
+        if len(name_list) == 1:
+            print('You only entered 1 name!')
+        else:
+            generated_random_names = random.sample(name_list, number_of_names)
+            print(f'Random names generated are: {generated_random_names}')
 
     random_names()
 
