@@ -19,6 +19,10 @@ def get_user_inputs():
                 "Error: You did not submit any names. Please enter a list of names separated by a comma: "
             )
             continue
+        # Check if the length of the name list is 1, and if it is, return the unmodified list
+        name_list = name_list.split(",")
+        if len(name_list) == 1:
+            return name_list
         # Remove whitespace after each comma in the input
         name_list = remove_whitespace_after_commas(name_list)
         # Check that the input contains only letters, hyphens, and commas
@@ -93,7 +97,8 @@ def select_random_names():
     # Get the input list of names
     name_list = get_user_inputs()
     if len(name_list) == 1:
-        print(f"You only entered 1 name: {name_list[0]}")
+        print(f"You only entered one name: {name_list[0]}")
+        return
     # Get the number of names to select
     num_of_names = get_valid_num_of_names(name_list)
     # Create empty set to add random names to
