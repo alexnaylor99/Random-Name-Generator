@@ -18,19 +18,23 @@ def get_list_of_users_names() -> list:
 
 def get_number_of_names(list_of_names: list) -> int:
     """
-    The function asks the user to input a number of names, that he wants to get, checks and returns it.
+    The function asks the user to input a number of names, that he
+    wants to get, checks and returns it.
     """
     while True:
 
         try:
-            user_number = int(input("Input the number of names, that you want to get: "))
+            user_number = int(
+                input("Input the number of names, that you want to get: "))
         except ValueError:
             print("Your number should be an integer! Try again.")
             continue
 
         # check a wrong entered number
         if user_number >= len(list_of_names):
-            print("Your number should be less than the number of names in the list! Try again.")
+            print(
+                "Your number should be less than the number of "
+                "names in the list! Try again.")
             continue
 
         if user_number == 0:
@@ -46,7 +50,8 @@ def get_number_of_names(list_of_names: list) -> int:
 
 def get_random_names(list_of_names: list, number: int):
     """
-    The function takes the list of names and number and returns random names from this list
+    The function takes the list of names and number
+    and returns random names from this list.
     """
 
     print(random.choices(list_of_names, k=number))
