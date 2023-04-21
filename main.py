@@ -4,7 +4,7 @@
 import random
 '''
 Function description
-
+ 
 Parameters
 ----------
 list_names : list of strings
