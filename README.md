@@ -7,13 +7,8 @@ A python programme that takes a list of names and returns a n number of random n
 The script takes a list of user-generated names, takes a number of names to return and uses the random library to return a random list of names.
 ### Dependencies
 
-* Requires the random module
+* Requires the random module that comes with Python
 
-to install the random module enter the following into the terminal:
-
-"""
-pip install random
-"""
 
 ## Help
 
