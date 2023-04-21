@@ -1,3 +1,35 @@
+# Random Name Generator
+
+A python programme that takes a list of names and returns a n number of random names.
+
+## Description
+
+The script takes a list of user-generated names, takes a number of names to return and uses the random library to return a random list of names.
+### Dependencies
+
+* Requires the random module
+
+to install the random module enter the following into the terminal:
+'''
+pip install random
+'''
+
+## Help
+
+This code is simple, so it should be pretty straightforward.
+
+## Authors
+
+Contributors names and contact info
+
+Ruy Zambrano - coded the project
+Alex Naylor - created the prompt
+
+
+
+
+#Original README file
+
 # Beginners Python Project - Random Name Generator
 Building a Random Name Generator application.
 ## Introduction 
