@@ -2,7 +2,18 @@
 #the function should return x number of names randomly
 
 import random
+'''
+Function description
 
+Parameters
+----------
+list_names : list of strings
+num_names : integer
+
+Returns
+-------
+Function returns a list of names
+'''
 def random_name_generator(list_names, num_names):
     shortlist = random.choices(list_names, k=num_names)
     return shortlist

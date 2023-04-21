@@ -10,9 +10,10 @@ The script takes a list of user-generated names, takes a number of names to retu
 * Requires the random module
 
 to install the random module enter the following into the terminal:
-'''
+
+"""
 pip install random
-'''
+"""
 
 ## Help
 
