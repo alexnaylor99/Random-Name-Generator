@@ -10,9 +10,8 @@ The script takes a list of user-generated names, takes a number of names to retu
 * Requires the random module
 
 to install the random module enter the following into the terminal:
-'''
-pip install random
-'''
+""" pip install random """
+
 
 ## Help
 
@@ -28,7 +27,7 @@ Alex Naylor - created the prompt
 
 
 
-#Original README file
+# Original README file
 
 # Beginners Python Project - Random Name Generator
 Building a Random Name Generator application.
