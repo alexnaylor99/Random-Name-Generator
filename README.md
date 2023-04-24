@@ -16,13 +16,13 @@ This code is simple, so it should be pretty straightforward.
 
 ## Authors
 
-Ruy Zambrano - coded the project
-Alex Naylor - created the prompt
+- Ruy Zambrano - coded the project
+- Alex Naylor - created the prompt
 
  
 
 
-#Original README file
+# Original README file
 
 # Beginners Python Project - Random Name Generator
 Building a Random Name Generator application.

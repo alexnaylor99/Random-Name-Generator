@@ -1,4 +1,4 @@
-# A function that takes a list of names and a number as arguments.
+# A script that takes a list of names and a number as arguments.
 # The function should return x number of names randomly.
 
 import random
@@ -21,24 +21,25 @@ def random_name_generator(list_names, num_names):
     return shortlist
 
 
-# Ask the user to input a list of names separated by a space and create a list.
+
 if __name__ == '__main__':
+    # Prompt the user to input a list of names and split them into a list.
     names = input('Enter a list of names that you are '
-                  'choosing from separated by a space: ')
+                  'choosing from, separated by a space (eg: "Anna Elsa Moana"): ')
     list_names = names.split()
 
-    # Ask the user to input an integer and validate. 
-    # If it is not an integer, as the user to try again. 
+
     while True:
+        # Prompt the user to input an integer and validate.
         try:
             num_names = int(input(f'You have {len(list_names)} names in your list. '
-                                  'How many names do you want: '))
+                                  'How many names do you want?\n '))
             if num_names <= 0:
                 print('You must choose a number greater than 0. Try again')
                 continue
             break
-        except Exception as e:
-            print(f'Error: {e}\nTry again')
+        except ValueError as e:
+            print(f'Error: {e}.\nYou must enter an integer. Try again')
     
     # Generate the shortlist. If number of desired names is equal or less
     # than the length of the list of names, return that list.
@@ -49,7 +50,8 @@ if __name__ == '__main__':
 
     # If there are not enough names in the list, let the user know.
     if len(list_names) < num_names:
-        print('There aren\'t enough names on the list! Printing anyways.')
+        print(f'There are less than {num_names} names in the list. '
+              'All names in the list have been included in the shortlist.')
 
     # Print the shortlist.
     if shortlist:
