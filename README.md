@@ -7,7 +7,7 @@ A python programme that takes a list of names and returns a n number of random n
 The script takes a list of user-generated names, takes a number of names to return and uses the random library to return a random list of names.
 ### Dependencies
 
-* Requires the random module that comes with Python
+* Requires the random module that comes pre-installed with Python
 
 
 ## Help
@@ -15,8 +15,6 @@ The script takes a list of user-generated names, takes a number of names to retu
 This code is simple, so it should be pretty straightforward.
 
 ## Authors
-
-Contributors names and contact info
 
 Ruy Zambrano - coded the project
 Alex Naylor - created the prompt
