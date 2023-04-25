@@ -32,3 +32,6 @@ def Random_Name(names,number):
     print(f"Random names are {random_names}")
 
             
+names = Names()
+number = Number(names)
+Random_Name(names,number)
