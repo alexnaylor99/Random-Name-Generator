@@ -1,6 +1,3 @@
-# A script that takes a list of names and a number as arguments.
-# The function should return x number of names randomly.
-
 import random
 
 def random_name_generator(list_names, num_names):
@@ -23,6 +20,7 @@ def random_name_generator(list_names, num_names):
 
 
 if __name__ == '__main__':
+
     # Prompt the user to input a list of names and split them into a list.
     names = input('Enter a list of names that you are '
                   'choosing from, separated by a space (eg: "Anna Elsa Moana"): ')
@@ -33,7 +31,7 @@ if __name__ == '__main__':
         # Prompt the user to input an integer and validate.
         try:
             num_names = int(input(f'You have {len(list_names)} names in your list. '
-                                  'How many names do you want?\n '))
+                                  'How many names do you want?\n'))
             if num_names <= 0:
                 print('You must choose a number greater than 0. Try again')
                 continue
@@ -41,10 +39,11 @@ if __name__ == '__main__':
         except ValueError as e:
             print(f'Error: {e}.\nYou must enter an integer. Try again')
     
-    # Generate the shortlist. If number of desired names is equal or less
-    # than the length of the list of names, return that list.
+    # Generate the shortlist. 
     if len(list_names) > num_names:
         shortlist = random_name_generator(list_names, num_names)
+
+    # Return the whole list if the number of names is less than the number required.
     else:
         shortlist = list_names
 
