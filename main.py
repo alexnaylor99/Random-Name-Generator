@@ -20,11 +20,19 @@ def random_name_generator(list_names, num_names):
 
 
 if __name__ == '__main__':
-
+    
     # Prompt the user to input a list of names and split them into a list.
-    names = input('Enter a list of names that you are '
+    while True:
+        names = input('Enter a list of names that you are '
                   'choosing from, separated by a space (eg: "Anna Elsa Moana"): ')
-    list_names = names.split()
+        
+        # Check if the user has input names.
+        if names == '':
+            print('You must enter at lease 1 name. Try again.')
+            continue
+        
+        list_names = names.split()
+        break
 
 
     while True:
