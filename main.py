@@ -5,7 +5,7 @@ def Names():
     The function asks the user for names, checks them, and returns them.
     """
     #Ask user for names and removes empty spaces
-    name_list = input("Please put in a list of names separated by spaces: ")
+    name_list = input("Please put in a list of names separated by spaces: \n")
     name_list_final = list(set(name_list.split()))
 
     #Checks that there are more than 1 name inputed
@@ -21,7 +21,8 @@ def Number(name_list_final):
     while True:
         
         try: #Will take the number as an intiger otherwise will return an error
-            number_of_names = int(input(f"How many names would you like? Min:1 Max: {len(name_list_final)}"))
+            number_of_names = int(input(f"How many names would you like? Min:1 Max: {len(name_list_final)} \n"))
+
             if 1 <= number_of_names <= len(name_list_final):
                 return number_of_names
         #Try should loop but if it fails this error will kick in
@@ -34,7 +35,11 @@ def Random_Name(names,number):
     This function will take the inputed names and selected numbers and choose a random name to display
     """
     random_names = random.choices(names,k=number) #storing the ranom choice
-    print(f"Random names are {random_names}")
+    print(f"The randomly chosen names are:")
+    print(*random_names, sep ='\n')
+    '\n'
+    print("Thank you for using this Random Name Generator")
+
 
 #Calling the function so that they run correctly so you just need to hit run           
 names = Names()
