@@ -67,4 +67,4 @@ if __name__ == '__main__':
     if shortlist:
         print('Here is your shortlist:')
         for count, name in enumerate(shortlist, 1):
-            print(f'{count}. {name}')
+            print(f'{count}. {name.capitalize()}')
