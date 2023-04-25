@@ -1,7 +1,7 @@
 # Beginners Python Project - Random Name Generator
-Building a Random Name Generator application.
-## Introduction 
-In this project, you will be building a text-based user interface that will take a input and output a list of random names from a pre-defined list. 
+Python Program that takes a list of names and returns a specified number of randomised names.
+## Description 
+Function which takes a list of user-generated names, a specified number of names and returns a random list of names. 
 
 ## Learning Objects
 - User inputs
