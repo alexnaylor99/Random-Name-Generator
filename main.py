@@ -8,7 +8,7 @@ def input_name():
         name_list (list): A list of names to be selected from.
     """
     # Ask the user to input a string of names separated by spaces
-    name_input = input("Please enter alpha names separated by spaces: ")
+    name_input = input("Please enter names separated by spaces: ")
     # Split and remove duplicates
     name_list = list(set(name_input.split()))  
     # Check if the names are alphabet and transform the names to be capitalized format
